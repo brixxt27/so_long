@@ -6,12 +6,11 @@
 #    By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/30 21:13:32 by jayoon            #+#    #+#              #
-#    Updated: 2022/07/27 14:25:07 by jayoon           ###   ########.fr        #
+#    Updated: 2022/07/27 15:06:12 by jayoon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= so_long
-# BONUS_NAME	= 
 
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror
@@ -29,8 +28,8 @@ INCS_DIR 	= includes
 LIBFT_DIR	= libft
 LIBFT		= libft.a
 
-# SRCS		= 	$(addprefix $(SRCS_DIR)/,\
-# 				main.c)
+SRCS		= 	$(addprefix $(SRCS_DIR)/,\
+				main.c)
 
 # B_SRCS		=	$(addprefix $(B_SRCS_DIR)/,\
 # 				main_bonus.c)

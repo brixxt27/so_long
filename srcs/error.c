@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/27 15:07:00 by jayoon            #+#    #+#             */
-/*   Updated: 2022/07/31 18:35:15 by jayoon           ###   ########.fr       */
+/*   Created: 2022/07/31 17:45:59 by jayoon            #+#    #+#             */
+/*   Updated: 2022/07/31 18:51:10 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "exception.h"
-#include "parse.h"
+#include "error.h"
+#include "libft.h"
+#include <stdlib.h>
 
-int	main(int argc, char *argv[])
+void	print_error(void)
 {
-	check_argv(argc, argv);
-	parse(argc, argv);
-	// check map
-	// mlx init
-	// window
-	// hook key mapping
-	// loop
-	return (0);
+	ft_putstr_fd("Error\n", 2);
+	exit(1);
+}
+
+void	check_error(t_error e, char *str, ssize_t ret)
+{
+	if (e == LIBFT && ret == 0)
+	{
+		ft_putstr_fd("Error :", 2);
+		ft_putstr_fd(str, 2);
+		exit(1);
+	}
+	else if (e == SYSTEM_CALL && ret == -1)
+	{
+		ft_putstr_fd("Error :", 2);
+		ft_putstr_fd(str, 2);
+		exit(1);
+	}
 }

@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parse.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/27 15:07:00 by jayoon            #+#    #+#             */
-/*   Updated: 2022/07/31 18:35:15 by jayoon           ###   ########.fr       */
+/*   Created: 2022/07/31 17:35:02 by jayoon            #+#    #+#             */
+/*   Updated: 2022/07/31 18:05:51 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "exception.h"
-#include "parse.h"
+#ifndef PARSE_H
+# define PARSE_H
 
-int	main(int argc, char *argv[])
-{
-	check_argv(argc, argv);
-	parse(argc, argv);
-	// check map
-	// mlx init
-	// window
-	// hook key mapping
-	// loop
-	return (0);
-}
+void	parse(int argc, char *argv[]);
+
+#endif

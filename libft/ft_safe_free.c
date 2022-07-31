@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_safe_free.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/27 15:07:00 by jayoon            #+#    #+#             */
-/*   Updated: 2022/07/31 18:35:15 by jayoon           ###   ########.fr       */
+/*   Created: 2022/07/31 19:15:26 by jayoon            #+#    #+#             */
+/*   Updated: 2022/07/31 19:18:29 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "exception.h"
-#include "parse.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+void	ft_safe_free(void *ret)
 {
-	check_argv(argc, argv);
-	parse(argc, argv);
-	// check map
-	// mlx init
-	// window
-	// hook key mapping
-	// loop
-	return (0);
+	if (!ret)
+		return ;
+	free(ret);
+	ret = NULL;
 }

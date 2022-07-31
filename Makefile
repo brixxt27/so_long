@@ -6,7 +6,7 @@
 #    By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/30 21:13:32 by jayoon            #+#    #+#              #
-#    Updated: 2022/07/27 15:06:12 by jayoon           ###   ########.fr        #
+#    Updated: 2022/07/31 17:29:36 by jayoon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ DEBUG		= -g3 -fsanitize=address
 
 # mlx
 MLXFLAGS	= -L./mlx -lmlx -framework OpenGL -framework AppKit
-MLX 		= ./mlx
-MLX_ARCHIVE	= ./mlx/libmlx.a
+MLX_DIR		= mlx
+MLX_ARCHIVE	= libmlx.a
 
 SRCS_DIR	= srcs
 # B_SRCS_DIR	= bonus_srcs
@@ -47,15 +47,14 @@ all: $(NAME)
 	$(CC) $(CFLAGS) -I $(INCS_DIR) -I $(LIBFT_DIR) -c $^ -o $@
 
 # mlx. Focus on NAME target!
-$(NAME): $(OBJS) $(MLX_ARCHIVE)
-	@cp $(MLX_ARCHIVE) ./
+$(NAME): $(OBJS) $(MLX_DIR)/$(MLX_ARCHIVE)
 	@make bonus -C $(LIBFT_DIR)
 	@cp $(LIBFT_DIR)/$(LIBFT) ./
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBFT)
 
 # mlx
-$(MLX_ARCHIVE):
-	make -C $(MLX)
+$(MLX_DIR)/$(MLX_ARCHIVE):
+	make -C $(MLX_DIR)
 
 # $(BONUS_NAME): $(B_OBJS)
 # 	@make bonus -C $(LIBFT_DIR)
@@ -67,6 +66,7 @@ debug:
 
 clean:
 	@make clean -C $(LIBFT_DIR)
+	@make clean -C $(MLX_DIR)
 	rm -f $(OBJS) $(B_OBJS) $(LIBFT)
 
 fclean: clean

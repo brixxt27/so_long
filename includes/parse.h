@@ -6,13 +6,13 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 17:35:02 by jayoon            #+#    #+#             */
-/*   Updated: 2022/07/31 18:05:51 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/07/31 20:01:25 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PARSE_H
 # define PARSE_H
 
-void	parse(int argc, char *argv[]);
+char	**parse(char *file);
 
 #endif

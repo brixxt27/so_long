@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_argv.c                                       :+:      :+:    :+:   */
+/*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 17:50:51 by jayoon            #+#    #+#             */
-/*   Updated: 2022/07/31 18:31:32 by jayoon           ###   ########.fr       */
+/*   Created: 2022/07/31 21:36:34 by jayoon            #+#    #+#             */
+/*   Updated: 2022/07/31 21:54:53 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "error.h"
-#include "libft.h"
+#ifndef SO_LONG_H
+# define SO_LONG_H
 
-void	check_argv(int argc, char *argv[])
+# include <stdlib.h>
+
+typedef struct s_map_info
 {
-	char	*str;
+	char	**map;
+	size_t	row;
+	size_t	col;
+}	t_map_info;
 
-	if (argc != 2)
-		print_error();
-	str = ft_strrchr(argv[1], '.');
-	check_error(LIBFT, "ft_strrchr", (ssize_t)str);
-	if (ft_strncmp(str, ".ber", 4))
-		print_error();
-}
+#endif

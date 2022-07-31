@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exception.h                                        :+:      :+:    :+:   */
+/*   init.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 18:06:05 by jayoon            #+#    #+#             */
-/*   Updated: 2022/07/31 21:28:55 by jayoon           ###   ########.fr       */
+/*   Created: 2022/07/31 21:45:44 by jayoon            #+#    #+#             */
+/*   Updated: 2022/07/31 22:05:16 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EXCEPTION_H
-# define EXCEPTION_H
+#ifndef INIT_H
+# define INIT_H
 
-void	check_file_name(int argc, char *file);
-void	check_map(char **map);
+# include "so_long.h"
+
+void	init_map_row_and_col(t_map_info *map_info);
 
 #endif

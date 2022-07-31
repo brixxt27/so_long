@@ -6,7 +6,7 @@
 #    By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/30 21:13:32 by jayoon            #+#    #+#              #
-#    Updated: 2022/07/31 19:59:43 by jayoon           ###   ########.fr        #
+#    Updated: 2022/07/31 21:28:34 by jayoon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,9 +30,10 @@ LIBFT		= libft.a
 
 SRCS		= 	$(addprefix $(SRCS_DIR)/,\
 				main.c \
-				check_argv.c \
+				check_file_name.c \
 				error.c \
-				parse.c)
+				parse.c \
+				check_map)
 
 # B_SRCS		=	$(addprefix $(B_SRCS_DIR)/,\
 # 				main_bonus.c)

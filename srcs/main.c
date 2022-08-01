@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 15:07:00 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/01 13:35:45 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/01 16:47:32 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,21 @@
 #include "init.h"
 #include "parse.h"
 #include "so_long.h"
-
 #include "libft.h"
+
+static void	free_map(t_map_info *p_map_info)
+{
+	size_t	i;
+
+	i = 0;
+	while (p_map_info->map[i])
+	{
+		ft_safe_free(p_map_info->map[i]);
+		i++;
+	}
+	ft_safe_free(p_map_info->map);
+}
+
 #include <stdio.h>
 int	main(int argc, char *argv[])
 {
@@ -29,6 +42,8 @@ int	main(int argc, char *argv[])
 	// window
 	// hook key mapping
 	// loop
+	// free all
+	free_map(&map_info);
 	return (0);
 }
 

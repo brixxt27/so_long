@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 17:34:55 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/01 11:33:32 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/01 16:35:25 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,15 @@ static char	*make_map_str(int fd)
 		ret_gnl = get_next_line(fd);
 		if (!ret_gnl)
 			break ;
+		if (*ret_gnl == '\n')
+			print_error("There are not enough wall");
 		temp = join;
 		join = ft_strjoin(join, ret_gnl);
 		check_error(LIBFT, "ft_strjoin", (ssize_t)join);
 		ft_safe_free(ret_gnl);
 		ft_safe_free(temp);
 	}
+	close(fd);
 	return (join);
 }
 

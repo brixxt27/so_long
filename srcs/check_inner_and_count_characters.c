@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 13:44:10 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/01 14:17:23 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/01 16:14:21 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	check_inner_and_count_characters(t_map_info *p_map_info)
 	map = init_utils(&cnt, &idx, p_map_info);
 	while (idx.row < p_map_info->row - 1)
 	{
+		idx.col = 1;
 		while (idx.col < p_map_info->col - 1)
 		{
 			if (map[idx.row][idx.col] == 'P')
@@ -51,8 +52,8 @@ void	check_inner_and_count_characters(t_map_info *p_map_info)
 			else if (map[idx.row][idx.col] == 'C')
 				p_map_info->cnt_c++;
 			else if (map[idx.row][idx.col] == '0' || \
-						map[idx.row][idx.col] ==  '1')
-				continue ;
+					map[idx.row][idx.col] == '1')
+				;
 			else
 				print_error("It is not correct characters");
 			idx.col++;

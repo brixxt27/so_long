@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 17:45:26 by jayoon            #+#    #+#             */
-/*   Updated: 2022/07/31 18:49:54 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/01 11:42:46 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@
 typedef enum e_error
 {
 	LIBFT,
-	SYSTEM_CALL
+	SYSTEM_CALL,
+	MALLOC
 }	t_error;
 
-void	print_error(void);
+void	print_error(char *str);
 void	check_error(t_error e, char *str, ssize_t ret);
 
 #endif

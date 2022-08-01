@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 17:34:55 by jayoon            #+#    #+#             */
-/*   Updated: 2022/07/31 20:04:14 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/01 11:33:32 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,32 @@ static int	open_file(char *file)
 	return (fd);
 }
 
+static char	*init_empty_str(void)
+{
+	char	*str;
+
+	str = malloc(1);
+	check_error(MALLOC, "malloc", (ssize_t)str);
+	*str = '\0';
+	return (str);
+}
+
 static char	*make_map_str(int fd)
 {
 	char	*ret_gnl;
 	char	*join;
 	char	*temp;
 
-	join = "";
-	ret_gnl = get_next_line(fd);
-	check_error(LIBFT, "get_next_line", (ssize_t)ret_gnl);
-	join = ft_strjoin(join, ret_gnl);
-	check_error(LIBFT, "ft_strjoin", (ssize_t)join);
-	while (ret_gnl)
+	join = init_empty_str();
+	while (1)
 	{
-		ft_safe_free(ret_gnl);
 		ret_gnl = get_next_line(fd);
 		if (!ret_gnl)
 			break ;
 		temp = join;
 		join = ft_strjoin(join, ret_gnl);
 		check_error(LIBFT, "ft_strjoin", (ssize_t)join);
+		ft_safe_free(ret_gnl);
 		ft_safe_free(temp);
 	}
 	return (join);

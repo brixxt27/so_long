@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 17:45:59 by jayoon            #+#    #+#             */
-/*   Updated: 2022/07/31 18:51:10 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/01 12:31:03 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 #include "libft.h"
 #include <stdlib.h>
 
-void	print_error(void)
+void	print_error(char *str)
 {
 	ft_putstr_fd("Error\n", 2);
+	ft_putstr_fd(": ", 2);
+	ft_putendl_fd(str, 2);
 	exit(1);
 }
 
@@ -29,6 +31,12 @@ void	check_error(t_error e, char *str, ssize_t ret)
 		exit(1);
 	}
 	else if (e == SYSTEM_CALL && ret == -1)
+	{
+		ft_putstr_fd("Error :", 2);
+		ft_putstr_fd(str, 2);
+		exit(1);
+	}
+	else if (e == MALLOC && ret == 0)
 	{
 		ft_putstr_fd("Error :", 2);
 		ft_putstr_fd(str, 2);

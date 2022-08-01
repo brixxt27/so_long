@@ -13,6 +13,9 @@
 		"exception.h": "c",
 		"stdlib.h": "c",
 		"stdio.h": "c",
-		"unistd.h": "c"
+		"unistd.h": "c",
+		"error.h": "c",
+		"parse.h": "c",
+		"fcntl.h": "c"
 	}
 }

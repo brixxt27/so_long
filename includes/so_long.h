@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 21:36:34 by jayoon            #+#    #+#             */
-/*   Updated: 2022/07/31 21:54:53 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/01 13:33:34 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct s_map_info
 	char	**map;
 	size_t	row;
 	size_t	col;
+	size_t	cnt_c;
 }	t_map_info;
 
 #endif

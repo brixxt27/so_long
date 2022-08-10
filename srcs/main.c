@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 15:07:00 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/05 00:01:43 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/10 17:39:15 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,17 @@ static void	free_map(t_map_info *p_map_info)
 	ft_safe_free(p_map_info->map);
 }
 
-#include <stdio.h>
 int	main(int argc, char *argv[])
 {
-	t_game	game;
+	t_tool	game;
 
 	check_file_name(argc, argv[1]);
 	game.map_info.map = parse(argv[1]);
 	init_map_info(&game.map_info);
 	check_map(&game.map_info);
-	init_for_game(&game);
+	// init_for_game(&game);
 	// hook key mapping
 	// loop
-	// free all
 	free_map(&game.map_info);
 	return (0);
 }

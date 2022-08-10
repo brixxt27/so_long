@@ -6,13 +6,13 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 23:56:39 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/05 00:04:55 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/10 13:41:14 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void    init_for_game(t_tool tool)
+void    init_for_game(t_tool game)
 {
     //mlx init
     //init window

@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 15:07:00 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/11 15:42:40 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/11 16:39:49 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ int	main(int argc, char *argv[])
 	init_map_info(&game_info.map_info);
 	check_map(&game_info.map_info);
 	init_mlx_window_image(&game_info);
-	// init_mlx_info(&game_info);
-	// draw_map(&game_info);
+	draw_map(&game_info);
 	// mlx_hook(game_info.mlx_info.p_win, ON_KEYDOWN, 0, \
 	// 	&on_keydown_callback, &game_info);
 	// mlx_hook(game_info.mlx_info.p_win, ON_DESTROY, 0, \

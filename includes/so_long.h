@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 21:36:34 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/11 15:17:43 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/11 16:40:37 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,7 @@ typedef struct s_game_info
 	t_img		img;
 	t_position	pos;
 }	t_game_info;
+
+void	draw_map(t_game_info *game_info);
 
 #endif

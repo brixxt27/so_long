@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 15:07:00 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/10 17:39:15 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/11 15:42:40 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,21 @@ static void	free_map(t_map_info *p_map_info)
 
 int	main(int argc, char *argv[])
 {
-	t_tool	game;
+	t_game_info	game_info;
 
 	check_file_name(argc, argv[1]);
-	game.map_info.map = parse(argv[1]);
-	init_map_info(&game.map_info);
-	check_map(&game.map_info);
-	// init_for_game(&game);
-	// hook key mapping
-	// loop
-	free_map(&game.map_info);
+	game_info.map_info.map = parse(argv[1]);
+	init_map_info(&game_info.map_info);
+	check_map(&game_info.map_info);
+	init_mlx_window_image(&game_info);
+	// init_mlx_info(&game_info);
+	// draw_map(&game_info);
+	// mlx_hook(game_info.mlx_info.p_win, ON_KEYDOWN, 0, \
+	// 	&on_keydown_callback, &game_info);
+	// mlx_hook(game_info.mlx_info.p_win, ON_DESTROY, 0, \
+	// 	&on_destroy_callback, &game_info);
+	// mlx_loop(game_info.mlx_info.p_mlx);
+	free_map(&game_info.map_info);
 	return (0);
 }
 

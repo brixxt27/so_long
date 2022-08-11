@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 13:44:10 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/01 16:14:21 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/11 15:36:33 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,22 @@ static void	check_minimum_conditions(t_cnt *p_cnt, t_map_info *p_map_info)
 		print_error("Map must have at least one collectible");
 }
 
+static void	count_characters(char **map, t_idx *idx, t_cnt *cnt, \
+							t_map_info *p_map_info)
+{
+	if (map[idx->row][idx->col] == 'P')
+		cnt->p++;
+	else if (map[idx->row][idx->col] == 'E')
+		cnt->e++;
+	else if (map[idx->row][idx->col] == 'C')
+		p_map_info->cnt_c++;
+	else if (map[idx->row][idx->col] == '0' || \
+			map[idx->row][idx->col] == '1')
+		;
+	else
+		print_error("It is not correct characters");
+}
+
 void	check_inner_and_count_characters(t_map_info *p_map_info)
 {
 	t_cnt	cnt;
@@ -45,17 +61,7 @@ void	check_inner_and_count_characters(t_map_info *p_map_info)
 		idx.col = 1;
 		while (idx.col < p_map_info->col - 1)
 		{
-			if (map[idx.row][idx.col] == 'P')
-				cnt.p++;
-			else if (map[idx.row][idx.col] == 'E')
-				cnt.e++;
-			else if (map[idx.row][idx.col] == 'C')
-				p_map_info->cnt_c++;
-			else if (map[idx.row][idx.col] == '0' || \
-					map[idx.row][idx.col] == '1')
-				;
-			else
-				print_error("It is not correct characters");
+			count_characters(map, &idx, &cnt, p_map_info);
 			idx.col++;
 		}
 		idx.row++;

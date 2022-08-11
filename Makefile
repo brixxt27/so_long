@@ -6,7 +6,7 @@
 #    By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/30 21:13:32 by jayoon            #+#    #+#              #
-#    Updated: 2022/08/01 14:33:29 by jayoon           ###   ########.fr        #
+#    Updated: 2022/08/11 15:10:51 by jayoon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ endif
 all: $(NAME)
 
 %.o : %.c
-	$(CC) $(CFLAGS) -I $(INCS_DIR) -I $(LIBFT_DIR) -c $^ -o $@
+	$(CC) $(CFLAGS) -I $(INCS_DIR) -I $(LIBFT_DIR) -I $(MLX_DIR) -c $^ -o $@
 
 # mlx. Focus on NAME target!
 $(NAME): $(OBJS) $(MLX_DIR)/$(MLX_ARCHIVE)

@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 21:27:40 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/01 16:24:08 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/12 20:18:23 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ static void	check_edge_is_wall(t_map_info *p_map_info)
 	}
 }
 
-void	check_map(t_map_info *p_map_info)
+void	check_map(t_game_info *game_info)
 {
-	check_map_is_rectangular(p_map_info);
-	check_edge_is_wall(p_map_info);
-	check_inner_and_count_characters(p_map_info);
+	check_map_is_rectangular(&game_info->map_info);
+	check_edge_is_wall(&game_info->map_info);
+	check_inner_and_count_characters(game_info);
 }

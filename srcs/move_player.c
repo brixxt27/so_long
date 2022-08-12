@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exception.h                                        :+:      :+:    :+:   */
+/*   move_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 18:06:05 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/12 20:17:50 by jayoon           ###   ########.fr       */
+/*   Created: 2022/08/12 21:22:06 by jayoon            #+#    #+#             */
+/*   Updated: 2022/08/12 22:00:45 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EXCEPTION_H
-# define EXCEPTION_H
+#include "so_long.h"
+#include <stdio.h>
 
-# include <stdlib.h>
-# include "so_long.h"
-
-typedef struct s_cnt
+void	move_player(t_game_info *param, t_position *curr, t_position *next)
 {
-	size_t	p;
-	size_t	e;
-}	t_cnt;
-
-typedef struct s_idx_of_rectangular
-{
-	size_t	col;
-	size_t	row;
-}	t_idx;
-
-void	check_file_name(int argc, char *file);
-void	check_map(t_game_info *game_info);
-void	check_inner_and_count_characters(t_game_info *game_info);
-
-#endif
+	printf("Number of steps : %zu\n", ++param->map_info.steps);
+	change_map()
+	// if 0 || C
+		// 현재를 0, 다음을 P
+		// curr 에 next 대입하기
+	// else if E && cnt_c == 0
+		// printf 클리어 축하 메시지
+		// 종료
+	// 변경된 map 으로 이미지 렌더링
+}

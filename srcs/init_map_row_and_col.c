@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 21:42:53 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/01 13:37:27 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/12 21:59:23 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,15 @@ static void	init_cnt_c(t_map_info *p_map_info)
 	p_map_info->cnt_c = 0;
 }
 
+static void	init_steps(t_map_info *p_map_info)
+{
+	p_map_info->steps = 0;
+}
+
 void	init_map_info(t_map_info *p_map_info)
 {
 	init_row(p_map_info);
 	init_col(p_map_info);
 	init_cnt_c(p_map_info);
+	init_steps(p_map_info);
 }

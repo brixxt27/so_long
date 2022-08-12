@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 16:42:32 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/11 16:57:57 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/12 21:42:14 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ static void	draw_image(t_game_info *game_info, void *image, \
 	mlx_put_image_to_window(game_info->mlx, game_info->window, image, \
 							x * IMG_SIZE, y * IMG_SIZE);
 }
+
 void	draw_map(t_game_info *game_info)
 {
 	char	**map;
@@ -39,21 +40,23 @@ void	draw_map(t_game_info *game_info)
 	size_t	y;
 
 	init_position(&map, &x, &y, game_info);
-	while (y < game_info->map_info.col)
+	while (y < game_info->map_info.row)
 	{
 		x = 0;
-		while (x < game_info->map_info.row)
+		while (x < game_info->map_info.col)
 		{
-			if (map[y][x] == '0')
-				draw_image(game_info, game_info->img.empty, x, y);
-			else if (map[y][x] == '1')
+			if (map[y][x] == '1')
 				draw_image(game_info, game_info->img.wall, x, y);
-			else if (map[y][x] == 'C')
+			else
+				draw_image(game_info, game_info->img.empty, x, y);
+			if (map[y][x] == 'C')
 				draw_image(game_info, game_info->img.item, x, y);
 			else if (map[y][x] == 'E')
 				draw_image(game_info, game_info->img.exit, x, y);
-			else
+			else if (map[y][x] == 'P')
 				draw_image(game_info, game_info->img.player, x, y);
+			x++;
 		}
+		y++;
 	}
 }

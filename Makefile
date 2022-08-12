@@ -6,7 +6,7 @@
 #    By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/30 21:13:32 by jayoon            #+#    #+#              #
-#    Updated: 2022/08/11 21:08:12 by jayoon           ###   ########.fr        #
+#    Updated: 2022/08/12 21:23:47 by jayoon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,12 +32,15 @@ LIBFT_DIR	=	./libft/
 SRCS_NAME	=	check_file_name.c \
 				check_inner_and_count_characters.c \
 				check_map.c \
+				do_it_at_key_down.c \
 				draw_map.c \
 				error.c \
 				init_map_row_and_col.c \
 				init_mlx_window_image.c \
 				main.c \
+				move_player.c \
 				parse.c
+
 OBJS_NAME	=	$(SRCS_NAME:.c=.o)
 
 SRCS		=	$(addprefix $(SRCS_DIR), $(SRCS_NAME))
@@ -51,7 +54,7 @@ endif
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(MLX) $(OBJS_DIR) $(OBJS)
+$(NAME): $(LIBFT) $(MLX) $(OBJS)
 	$(CC) $(CFLAGS) $(LIBFT_FLAGS) $(MLX_FLAGS) $(OBJS) -o $@
 
 $(LIBFT):

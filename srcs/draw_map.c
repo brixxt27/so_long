@@ -6,19 +6,19 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 16:42:32 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/13 21:31:53 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/13 21:37:30 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "mlx.h"
 
-static void	init_position(char ***map, size_t *x, size_t *y, t_game_info \
+static void	init_variable(char ***map, size_t *x, size_t *y, t_game_info \
 							*game_info)
 {
 	*map = game_info->map_info.map;
-	*x = 1;
-	*y = 1;
+	*x = 0;
+	*y = 0;
 }
 
 static void	draw_image(t_game_info *game_info, void *image, \
@@ -39,7 +39,7 @@ void	draw_map(t_game_info *game_info)
 	size_t	x;
 	size_t	y;
 
-	init_position(&map, &x, &y, game_info);
+	init_variable(&map, &x, &y, game_info);
 	while (y < game_info->map_info.row)
 	{
 		x = 0;

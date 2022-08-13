@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_map_row_and_col.c                             :+:      :+:    :+:   */
+/*   init_map_info_and_steps.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 21:42:53 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/12 21:59:23 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/13 20:48:58 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,15 @@ static void	init_cnt_c(t_map_info *p_map_info)
 	p_map_info->cnt_c = 0;
 }
 
-static void	init_steps(t_map_info *p_map_info)
+static void	init_steps(t_position *pos)
 {
-	p_map_info->steps = 0;
+	pos->steps = 0;
 }
 
-void	init_map_info(t_map_info *p_map_info)
+void	init_map_info_and_steps(t_map_info *p_map_info, t_position *pos)
 {
 	init_row(p_map_info);
 	init_col(p_map_info);
 	init_cnt_c(p_map_info);
-	init_steps(p_map_info);
+	init_steps(pos);
 }

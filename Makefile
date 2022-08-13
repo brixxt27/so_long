@@ -6,7 +6,7 @@
 #    By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/30 21:13:32 by jayoon            #+#    #+#              #
-#    Updated: 2022/08/12 21:23:47 by jayoon           ###   ########.fr        #
+#    Updated: 2022/08/13 20:45:14 by jayoon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ SRCS_NAME	=	check_file_name.c \
 				do_it_at_key_down.c \
 				draw_map.c \
 				error.c \
-				init_map_row_and_col.c \
+				init_map_info_and_steps.c \
 				init_mlx_window_image.c \
 				main.c \
 				move_player.c \

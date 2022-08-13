@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 15:07:00 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/12 21:41:57 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/13 21:24:50 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,26 +36,15 @@ int	main(int argc, char *argv[])
 
 	check_file_name(argc, argv[1]);
 	game_info.map_info.map = parse(argv[1]);
-	init_map_info(&game_info.map_info);
+	init_map_info_and_steps(&game_info.map_info, &game_info.pos);
 	check_map(&game_info);
 	init_mlx_window_image(&game_info);
 	draw_map(&game_info);
 	mlx_hook(game_info.window, ON_KEYDOWN, 0, \
-		&do_it_at_key_down, &game_info);
+		do_it_at_key_down, &game_info);
 	mlx_hook(game_info.window, ON_DESTROY, 0, \
-		&do_it_at_click_x, &game_info);
+		do_it_at_click_x, &game_info);
 	mlx_loop(game_info.mlx);
 	free_map(&game_info.map_info);
 	return (0);
 }
-
-	// int i = 0;
-	// while (map[i])
-	// {
-	// 	printf("%s\n", map[i]);
-	// 	ft_safe_free(map[i]);
-	// 	i++;
-	// }
-	// free(map);
-	// map = NULL;
-	// system("leaks so_long");

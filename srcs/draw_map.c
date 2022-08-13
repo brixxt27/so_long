@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 16:42:32 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/12 21:42:14 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/13 21:31:53 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static void	init_position(char ***map, size_t *x, size_t *y, t_game_info \
 							*game_info)
 {
 	*map = game_info->map_info.map;
-	*x = 0;
-	*y = 0;
+	*x = 1;
+	*y = 1;
 }
 
 static void	draw_image(t_game_info *game_info, void *image, \

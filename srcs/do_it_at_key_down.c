@@ -6,12 +6,13 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 19:33:10 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/12 21:35:22 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/13 21:25:56 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "so_long.h"
+#include <stdio.h>
 
 static void	what_is_next(int key_down, t_position *curr, t_position *next)
 {
@@ -45,11 +46,11 @@ static int	is_movable(int key_down, t_game_info *info, t_position *next)
 	what_is_next(key_down, &info->pos, next);
 	if (map[next->y][next->x] == '0' || map[next->y][next->x] == 'C' || \
 		(map[next->y][next->x] == 'E' && info->map_info.cnt_c == 0))
-			return (1);
+		return (1);
 	return (0);
 }
 
-static void	exit_game(t_game_info *game_info)
+void	exit_game(t_game_info *game_info)
 {
 	mlx_destroy_window(game_info->mlx, game_info->window);
 	exit(0);
@@ -57,6 +58,7 @@ static void	exit_game(t_game_info *game_info)
 
 int	do_it_at_click_x(void *param)
 {
+	printf("Game over!\n");
 	exit_game((t_game_info *)param);
 	return (0);
 }
@@ -73,6 +75,9 @@ int	do_it_at_key_down(int key_down, void *param)
 				&next);
 	}
 	else if (key_down == KEY_ESC)
+	{
+		printf("Game over!\n");
 		exit_game((t_game_info *)param);
+	}
 	return (0);
 }

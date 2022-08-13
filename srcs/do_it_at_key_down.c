@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 19:33:10 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/13 21:25:56 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/13 21:50:24 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	what_is_next(int key_down, t_position *curr, t_position *next)
 	else if (key_down == KEY_S)
 	{
 		next->x = curr->x;
-		next->y = curr->y - 1;
+		next->y = curr->y + 1;
 	}
 	else if (key_down == KEY_D)
 	{
@@ -34,7 +34,7 @@ static void	what_is_next(int key_down, t_position *curr, t_position *next)
 	else
 	{
 		next->x = curr->x;
-		next->x = curr-> y + 1;
+		next->y = curr-> y - 1;
 	}
 }
 

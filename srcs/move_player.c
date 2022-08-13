@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 21:22:06 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/13 21:22:59 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/13 22:00:16 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,29 @@ static void	update_steps(t_position *curr, t_position *next)
 	curr->x = next->x;
 	curr->x = next->y;
 }
+
+
+#include <stdio.h>
 static void	print_changed_map(t_map_info *map_info, t_position *curr, \
 	t_position *next, t_game_info *param)
 {
-	if (map_info->map[next->y][next->x] == '0' || \
-		map_info->map[next->y][next->x] == 'C')
+	// test
+	int y = 0;
+	while (map_info->map[y])
 	{
+		printf("%s\n", map_info->map[y]);
+		y++;
+	}
+
+
+	if (map_info->map[next->y][next->x] == '0')
+	{
+		map_info->map[curr->y][curr->x] = '0';
+		map_info->map[next->y][next->x] = 'P';
+	}
+	else if (map_info->map[next->y][next->x] == 'C')
+	{
+		map_info->cnt_c--;
 		map_info->map[curr->y][curr->x] = '0';
 		map_info->map[next->y][next->x] = 'P';
 	}

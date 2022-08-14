@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 21:27:40 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/13 18:36:00 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/14 17:04:28 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,16 @@ static void	check_edge_is_wall(t_map_info *p_map_info)
 	}
 }
 
+static void	check_map_size(t_map_info *map_info)
+{
+	if (map_info->col > 40 || map_info->row > 22)
+		print_error("Map is too big!");
+}
+
 void	check_map(t_game_info *game_info)
 {
 	check_map_is_rectangular(&game_info->map_info);
 	check_edge_is_wall(&game_info->map_info);
 	check_inner_and_count_characters(game_info);
+	check_map_size(&game_info->map_info);
 }

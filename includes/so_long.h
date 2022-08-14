@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 21:36:34 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/13 21:15:20 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/14 15:48:12 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ typedef struct s_game_info
 }	t_game_info;
 
 void	draw_map(t_game_info *game_info);
-int		do_it_at_key_down(int key_down, void *param);
+int		do_it_at_key_down(int key_down, t_game_info *param);
 int		do_it_at_click_x(void *param);
 void	exit_game(t_game_info *game_info);
 void	move_player(t_game_info *param, t_position *curr, t_position *next);

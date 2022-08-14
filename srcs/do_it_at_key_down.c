@@ -6,7 +6,7 @@
 /*   By: jayoon <jayoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 19:33:10 by jayoon            #+#    #+#             */
-/*   Updated: 2022/08/13 21:50:24 by jayoon           ###   ########.fr       */
+/*   Updated: 2022/08/14 16:21:18 by jayoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,11 @@ int	do_it_at_click_x(void *param)
 	return (0);
 }
 
-int	do_it_at_key_down(int key_down, void *param)
+int	do_it_at_key_down(int key_down, t_game_info *param)
 {
 	t_position	next;
 
+	next.steps = param->pos.steps;
 	if (key_down == KEY_A || key_down == KEY_S \
 		|| key_down == KEY_D || key_down == KEY_W)
 	{
